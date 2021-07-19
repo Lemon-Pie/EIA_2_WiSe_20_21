@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="mystyle.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogi's Soccer Simulator</title>
+</head>
+<body>
+   <div id="everything"> 
+    <canvas id="pitch" width="800" height="518">
+    </canvas>
+    <div id="scoreboard">
+        <text id="score">Score</text>
+        <text id="homeGoals">0</text>
+        <text id="dash">-</text>
+        <text id="guestGoals">0</text>
+        <br>
+        <text id="possessionPlayer">Possession: </text>
+        <text id="possession">Gnabry</text>
+
+    </div>
+    <div id="teamWrapper">
+    <div id="homeTeam">
+        <label>Player</label>
+        <select id="selectHomePlayer">      
+        </select>
+            <label>Trickot Color</label>
+            <select id="trickotColorH" onchange="changeTrickotH()">
+                <option>Blue</option>
+                <option>Green</option>
+                <option>Purple</option>
+                <option>Black</option>
+                <option>Red</option>
+              </select>
+        <button id="changeAttributesH" onclick="changeAttributesH()">Change Attributes</button>
+        <button id="subPlayerH" onclick="showHomeSub()">Substitute</button>
+    </div>
+
+    <div id="formsH">
+        <div>
+            <label>Speed Min</label>
+            <input type="number" id="speedMinH">
+          </div>
+          <div>
+              <label>Speed Max</label>
+            <input type="number" id="speedMaxH" >
+          </div>
+        <div>
+            <label>Accuracy Min (0-100)</label>
+            <input type="number" id="accuracyMinH">
+          </div>
+          <div>
+            <label>Accuracy Max (0-100)</label>
+            <input type="number" id="accuracyMaxH">
+          </div>
+          <div>
+            <button onclick="confirmAttributesH()">Confirm</button>
+            <button onclick="cancelAttributesH()">Cancel</button>
+        </div>
+    </div>
+    <div id="subHome">
+        <select id="selectHomeSub">    
+        </select>
+    </div>
+    <div id="confirmSubH">
+        <button id="confirmSubHbutton" onclick="confirmSubHome()">Confirm</button>
+        <button id="cancelSubHbutton" onclick="cancelSubHome()">Cancel</button>
+    </div>
+
+    <div id="formsG">
+        <div>
+            <label>Speed Min</label>
+            <input type="number" id="speedMinG">
+          </div>
+          <div>
+            <label>Speed Max</label>
+            <input type="number" id="speedMaxG">
+          </div>
+        <div>
+            <label>Accuracy Min (0-100)</label>
+            <input type="number" id="accuracyMinG">
+          </div>
+          <div>
+            <label>Accuracy Max (0-100)</label>
+            <input type="number" id="accuracyMaxG">
+          </div>
+          <div>
+              <button onclick="confirmAttributesG()">Confirm</button>
+              <button onclick="cancelAttributesG()">Cancel</button>
+          </div>
+    </div>
+    <div id="guestTeam">
+        <label>Player</label>
+        <select id="selectGuestPlayer">    
+        </select>
+        <label>Trickot Color</label>
+        <select id="trickotColorG" onchange="changeTrickotG()">
+            <option>Red</option>
+            <option>Green</option>
+            <option>Purple</option>
+            <option>Black</option>
+            <option>Blue</option>
+          </select>
+        <button id="changeAttributesG" onclick="changeAttributesG()">Change Attributes</button>
+        <button id="subPlayerG" onclick="showGuestSub()">Substitute</button>
+    </div>
+    <div id="subGuest">
+        <select id="selectGuestSub">    
+        </select>
+    </div>
+    <div id="confirmSubG">
+        <button id="confirmSubGbutton" onclick="confirmSubGuest()">Confirm</button>
+        <button id="cancelSubGbutton" onclick="cancelubGuest()">Cancel</button>
+    </div>
+    </div>
+</div>
+    <span id="debug"></span>
+    <script src="canvas.js"></script>
+</body>
+</html>
